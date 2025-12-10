@@ -781,34 +781,34 @@
                     <p style="margin-bottom: 25px;">Если хочешь поболтать об играх или обсудить блокировку роблокса - напиши сообщение. О программировании тоже могу немного поговорить.</p>
                     
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Как тебя зовут?</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Твой email (если хочешь ответ)</label>
-                            <input type="email" id="email" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">О чем хочешь поговорить?</label>
-                            <select id="subject" class="form-control" required>
-                                <option value="">Выбери тему</option>
-                                <option value="games">Игры</option>
-                                <option value="study">Учеба</option>
-                                <option value="programming">Программирование</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Твое сообщение</label>
-                            <textarea id="message" class="form-control" required placeholder="Напиши что-нибудь..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Отправить сообщение</button>
-                    </form>
+    <div class="form-group">
+        <label for="name">Как тебя зовут?</label>
+        <input type="text" id="name" name="user_name" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Твой email (если хочешь ответ)</label>
+        <input type="email" id="email" name="user_email" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subject">О чем хочешь поговорить?</label>
+        <select id="subject" name="subject" class="form-control" required>
+            <option value="">Выбери тему</option>
+            <option value="Игры">Игры</option>
+            <option value="Учеба">Учеба</option>
+            <option value="Программирование">Программирование</option>
+            <option value="Другое">Другое</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Твое сообщение</label>
+        <textarea id="message" name="message" class="form-control" required placeholder="Напиши что-нибудь..."></textarea>
+    </div>
+    
+    <button type="submit" class="btn">Отправить сообщение</button>
+</form>
                 </div>
             </div>
         </div>
@@ -933,7 +933,19 @@
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Отправка...';
-            submitBtn.disabled = true;
+            submitBtn.disabled = true; 
+            
+            // Собираем данные формы
+    const formData = {
+        user_name: document.getElementById('name').value,
+        user_email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        to_email: "ivanreinas76@gmail.com" // Добавьте свою почту для получения
+    };
+    
+    console.log("Отправляемые данные:", formData); // Для отладки
+    
             
             // Определяем тему разговора для письма
             const subjectSelect = document.getElementById('subject');
@@ -1001,6 +1013,7 @@
 </body>
 
 </html>
+
 
 
 
