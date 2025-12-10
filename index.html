@@ -604,6 +604,8 @@
         }
     </style>
 </head>
+   <!-- После других стилей в head -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <body>
     <!-- Header & Navigation -->
     <header>
@@ -846,7 +848,14 @@
         </div>
     </footer>
 
-    <script>
+<script>
+        // Инициализация EmailJS
+        (function() {
+            emailjs.init({
+                publicKey: "TZ8kER3J5N0m1uvBr", // Замените на ваш ключ
+            });
+        })();
+        
         // Переключение темы
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
@@ -915,42 +924,39 @@
             });
         });
         
-        // Form submission
+        // Form submission with EmailJS
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            // Показываем индикатор загрузки
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.disabled = true;
             
-            // Определяем тему разговора
-            let subjectText = '';
-            switch(subject) {
-                case 'games':
-                    subjectText = 'об играх';
-                    break;
-                case 'study':
-                    subjectText = 'об учебе';
-                    break;
-                case 'programming':
-                    subjectText = 'о программировании';
-                    break;
-                default:
-                    subjectText = 'о разном';
-            }
+            // Определяем тему разговора для письма
+            const subjectSelect = document.getElementById('subject');
+            const subjectText = subjectSelect.options[subjectSelect.selectedIndex].text;
             
-            // Показываем сообщение
-            if (email) {
-                alert(`Привет, ${name}! Спасибо за сообщение ${subjectText}. Постараюсь ответить на ${email} когда будет время.`);
-            } else {
-                alert(`Привет, ${name}! Спасибо за сообщение ${subjectText}. К сожалению, без email ответить не смогу. Но все равно приятно!`);
-            }
+            // Добавляем тему в данные формы
+            const formData = new FormData(this);
+            formData.append('subject_text', subjectText);
             
-            // Reset form
-            contactForm.reset();
+            // Отправляем письмо через EmailJS
+            emailjs.sendForm('service_ac70ldj', 'template_e2d0bdp', this)
+                .then(function() {
+                    alert(`Привет, ${document.getElementById('name').value}! Сообщение отправлено! Постараюсь ответить как можно скорее.`);
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('Ошибка EmailJS:', error);
+                    alert('Ошибка при отправке сообщения. Попробуйте еще раз или свяжитесь со мной через соцсети.');
+                })
+                .finally(function() {
+                    // Восстанавливаем кнопку
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
         
         // Анимация появления элементов при скролле
@@ -991,8 +997,10 @@
             });
         });
     </script>
+    
 </body>
 
 </html>
+
 
 
