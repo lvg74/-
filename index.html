@@ -2,1002 +2,1267 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио | Рейнас Иван Александрович </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Древо целей Ивана Рейнаса</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
-        :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3a0ca3;
-            --accent-color: #f72585;
-            --text-color: #212529;
-            --bg-color: #ffffff;
-            --card-bg: #f8f9fa;
-            --border-color: #e9ecef;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
-        }
-        
-        .dark-mode {
-            --primary-color: #6c8eff;
-            --secondary-color: #5a6cff;
-            --accent-color: #ff4d8d;
-            --text-color: #e9ecef;
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --border-color: #333333;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0c151f 0%, #1a2a3a 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 10px;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            transition: var(--transition);
-        }
-        
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-        
-        h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2.5rem;
-        }
-        
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 70px;
-            height: 4px;
-            background-color: var(--accent-color);
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
+            overflow-x: hidden;
         }
         
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            position: relative;
+            z-index: 1;
         }
         
         header {
-            background-color: var(--bg-color);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        .dark-mode header {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--primary-color);
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-        
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: 1.1rem;
+            text-align: center;
+            padding: 30px 0 20px;
+            margin-bottom: 20px;
             position: relative;
         }
         
-        nav ul li a:after {
+        header:after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #10b981, transparent);
         }
         
-        nav ul li a:hover:after {
-            width: 100%;
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #10b981 30%, #3b82f6 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(16, 185, 129, 0.2);
+            padding: 0 10px;
         }
         
-        .theme-toggle {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            width: 50px;
-            height: 26px;
-            border-radius: 13px;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
+        .subtitle {
+            font-size: 1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+            padding: 0 15px;
         }
         
-        .theme-toggle-slider {
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 22px;
-            height: 22px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
+        /* КАРТОЧКИ ЦЕЛЕЙ */
+        .goals-section {
+            margin-bottom: 40px;
         }
         
-        .dark-mode .theme-toggle-slider {
-            transform: translateX(24px);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-color);
+        .section-title {
             font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .hero {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 700;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
         }
-         .hero:before {
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            border-radius: 3px;
+        }
+        
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .goal-card {
+            background: rgba(26, 35, 53, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+        }
+        
+        .goal-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #10b981;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+        
+        .goal-card:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url(https://attachments.office.net/owa/23200624%40live.preco.ru/service.svc/s/GetAttachmentThumbnail?id=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0AoujMXfzWh0yD59FS074p1QACQ9Y0BQAAARIAEAADWLx4hR7RSoKMkyJNacCi&thumbnailType=2&token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii9vNFYwakpGa2RvU0lGdGN3blFTS0VlSkthcz0iLCJ4NXQiOiIvbzRWMGpKRmtkb1NJRnRjd25RU0tFZUpLYXM9Iiwibm9uY2UiOiJENzQzeWFlTXY5VzYtWERMVEZtSGNRSFVUam9rcWhieE9EeVdsdExOaDN5QVVmZlhsWF9qT3JFeDlVZThGRnlONHRjZWdWR05EMl9UelFsQVlfYWNRWWFna1JvVkZNOEVGd2FWU1U4cS0tSjV5RDdsdEc1ZEFONkhqeTdkd1dNVjZUb21ieG9NRHV0UV9OaEpQZFRmdmd1ZUlJTVoyUExoLXozRlNyZ0x0SXciLCJpc3Nsb2MiOiJHVjFQUjAxTUI4Nzg4Iiwic3JzbiI6NjM5MDA5MTQxMzIzODQ5MzQ2fQ.eyJzYXAtdmVyc2lvbiI6IjMzIiwiYXBwaWQiOiJhZjNlYmJiYS1jMjNmLTQ5MmEtYWE5My04MzQyMTY5NmVjNGIiLCJpc3NyaW5nIjoiV1ciLCJhcHBpZGFjciI6IjIiLCJhcHBfZGlzcGxheW5hbWUiOiIiLCJ1dGkiOiJmZWE5OTA5Mi00NDdlLTRjZDEtOTUxNS1lOWE4NDgwZDU1MWMiLCJpYXQiOjE3NjUzNjM1ODMsInZlciI6IlNUSS5Vc2VyLkNhbGxiYWNrVG9rZW4uVjEiLCJ0aWQiOiJhNTU2MzNjMzQ3M2M0MzczYWI4NGU5ZGUwMGQ3M2M2NyIsInRydXN0ZWRmb3JkZWxlZ2F0aW9uIjoiZmFsc2UiLCJ0b3BvbG9neSI6IntcIlR5cGVcIjpcIk1hY2hpbmVcIixcIlZhbHVlXCI6XCJHVjFQUjAxTUI4Nzg4LmV1cnByZDAxLnByb2QuZXhjaGFuZ2VsYWJzLmNvbVwifSIsInJlcXVlc3Rvcl9hcHBpZCI6IjE1N2NkZmJmLTczOTgtNGE1Ni05NmMzLWU5M2U5YWIzMDliNSIsInJlcXVlc3Rvcl9hcHBfZGlzcGxheW5hbWUiOiJPZmZpY2UgMzY1IEV4Y2hhbmdlIE1pY3Jvc2VydmljZSIsInNjcCI6Ik93YUF0dGFjaG1lbnRzLlJlYWQiLCJvaWQiOiIyYzYyYjBhOS1hMTY4LTQ0MmMtYTZkOC1hOGMyOGQ0Nzc2NGYiLCJwdWlkIjoiMTAwMzIwMDJCRUNERkE5OCIsInNtdHAiOiIyMzIwMDYyNEBsaXZlLnByZWNvLnJ1IiwidXBuIjoiMjMyMDA2MjRAbGl2ZS5wcmVjby5ydSIsInVzZXJjYWxsYmFja3VzZXJjb250ZXh0aWQiOiIzNzUyMTRhYjk1NGQ0NmI3ODZjZWU2YTg1ZjdjODU0MCIsImVtYmVkZGVkdXNlcnRva2VudHlwZSI6IkFBRCIsInVzZXJhY2Nlc3N0b2tlbiI6ImV5SjBlWEFpT2lKS1YxUWlMQ0p1YjI1alpTSTZJa2RxT1VSbFZGaFVTalZwVDA5WllYWmlhWEppTkc1eVExSTViVTlLTTFGV1MyNVBSRlJPWHpSZlJXY2lMQ0poYkdjaU9pSlNVekkxTmlJc0luZzFkQ0k2SW5KMGMwWlVMV0l0TjB4MVdUZEVWbGxsVTA1TFkwbEtOMVp1WXlJc0ltdHBaQ0k2SW5KMGMwWlVMV0l0TjB4MVdUZEVWbGxsVTA1TFkwbEtOMVp1WXlKOS5leUpoZFdRaU9pSm9kSFJ3Y3pvdkwyOTFkR3h2YjJzdWIyWm1hV05sTG1OdmJTSXNJbWx6Y3lJNkltaDBkSEJ6T2k4dmMzUnpMbmRwYm1SdmQzTXVibVYwTDJFMU5UWXpNMk16TFRRM00yTXRORE0zTXkxaFlqZzBMV1U1WkdVd01HUTNNMk0yTnk4aUxDSnBZWFFpT2pFM05qVXpOVGN5T1RRc0ltNWlaaUk2TVRjMk5UTTFOekk1TkN3aVpYaHdJam94TnpZMU5EUTRORFU1TENKaFkyTjBJam93TENKaFkzSWlPaUl4SWl3aVlXbHZJam9pUVZWUlFYVXZPR0ZCUVVGQmVrVTJTelJWYzJkUGQwZHJWRTFKTkhwNFpVNWphWGMxUnpVeFJtNU9SRWhHZFV4VlRHbE1VekJGUVZKeVNXdFdaRWt2TVVaU2FtRllLM00zZEcweFFUWnhaWFZuY0V4cVpESkhlbTFTU0hZd2RUTnpkMEU5UFNJc0ltRnRjaUk2V3lKM2FXRWlYU3dpWVhCd1gyUnBjM0JzWVhsdVlXMWxJam9pVDI1bElFOTFkR3h2YjJzZ1YyVmlJaXdpWVhCd2FXUWlPaUk1TVRrNVltWXlNQzFoTVRObUxUUXhNRGN0T0RWa1l5MHdNakV4TkRjNE4yVm1ORGdpTENKaGNIQnBaR0ZqY2lJNklqQWlMQ0psYm1ad2IyeHBaSE1pT2x0ZExDSm1ZVzFwYkhsZmJtRnRaU0k2SXRDZzBMWFF1ZEM5MExEUmdTSXNJbWRwZG1WdVgyNWhiV1VpT2lMUW1OQ3kwTERRdlNEUWtOQzcwTFhRdXRHQjBMRFF2ZEMwMFlEUXZ0Q3kwTGpSaHlJc0ltbGtkSGx3SWpvaWRYTmxjaUlzSW1sd1lXUmtjaUk2SWpFNE5TNHhNaTR5TWprdU1qVTBJaXdpYkc5bmFXNWZhR2x1ZENJNklrOHVRMmxSZVZsNldYbFpha0pvVDFNeGFFMVVXVFJNVkZFd1RXMU5kRmxVV210UFF6Rm9UMGROZVU5SFVUQk9lbU15VGtkWlUwcEhSVEZPVkZsNlRUSk5la3hVVVROTk1rMTBUa1JOTTAxNU1XaFphbWN3VEZkVk5WcEhWWGROUjFFelRUSk5NazU0YjFkTmFrMTVUVVJCTWsxcVVrRmlSMnd5V2xNMWQyTnRWbXBpZVRWNVpGTkRTa0ZSUFQwaUxDSnVZVzFsSWpvaTBLRFF0ZEM1MEwzUXNOR0JJTkNZMExMUXNOQzlJTkNRMEx2UXRkQzYwWUhRc05DOTBMVFJnTkMtMExMUXVOR0hJaXdpYjJsa0lqb2lNbU0yTW1Jd1lUa3RZVEUyT0MwME5ESmpMV0UyWkRndFlUaGpNamhrTkRjM05qUm1JaXdpYjI1d2NtVnRYM05wWkNJNklsTXRNUzAxTFRJeExURTBNak15TURBNE1qQXRNVEV3TXprNU5qTXpOaTB5TXpJME1Ea3dPREl6TFRjNE16TXlJaXdpY0hWcFpDSTZJakV3TURNeU1EQXlRa1ZEUkVaQk9UZ2lMQ0p5YUNJNklqRXVRVkZWUVhkNlRsZHdWSGhJWXpCUGNtaFBibVZCVG1NNFduZEpRVUZCUVVGQlVFVlFlbWRCUVVGQlFVRkJRVUZpUVZoWlJrRkJMaUlzSW5OamNDSTZJa0Z1WVd4NWRHbGpjeTVTWldGa1YzSnBkR1VnUTJGc1pXNWtZWEp6TGxKbFlXUlhjbWwwWlNCRFlXeGxibVJoY25NdVVtVmhaRmR5YVhSbExrRnNiQ0JEWVd4bGJtUmhjbk11VW1WaFpGZHlhWFJsTGxOb1lYSmxaQ0JEWVd4bGJtUmhjbk10U1c1MFpYSnVZV3d1VW1WaFpGZHlhWFJsSUVOb1lXNXVaV3d1UTNKbFlYUmxJRU5vWVc1dVpXd3VVbVZoWkVKaGMybGpMa0ZzYkNCRGFHRnVibVZzVFdWdFltVnlMbEpsWVdRdVFXeHNJRU5vWVc1dVpXeE5aVzFpWlhJdVVtVmhaRmR5YVhSbExrRnNiQ0JEYUdGdWJtVnNUV1Z6YzJGblpTNVNaV0ZrTGtGc2JDQkRhR0YwTGxKbFlXUWdRMmhoZEM1U1pXRmtWM0pwZEdVdVFXeHNJRU52Ykd4aFlpMUpiblJsY201aGJDNVNaV0ZrVjNKcGRHVWdRMjl1Ym1WamRHVmtRV05qYjNWdWRDMUpiblJsY201aGJDNVNaV0ZrVjNKcGRHVWdRMjl1Ym1WamRHOXljeTVTWldGa1YzSnBkR1V1VTJoaGNtVmtJRU52Ym5SaFkzUnpMbEpsWVdSWGNtbDBaU0JEYjI1MFlXTjBjeTVTWldGa1YzSnBkR1V1VTJoaGNtVmtJRVJwY21WamRHOXllUzVTWldGa0xrZHNiMkpoYkNCRWFYSmxZM1J2Y25rdVVtVmhaQzVNYjJOaGJDQkVWMFZ1WjJsdVpTMUpiblJsY201aGJDNVNaV0ZrSUVWQlV5NUJZMk5sYzNOQmMxVnpaWEl1UVd4c0lFWnBiR1Z6TGxKbFlXUlhjbWwwWlM1QmJHd2dSbWxzWlhNdVVtVmhaRmR5YVhSbExsTm9ZWEpsWkNCR2IyTjFjMlZrU1c1aWIzZ3RTVzUwWlhKdVlXd3VVbVZoWkZkeWFYUmxJRWR5YjNWd0xsSmxZV1JYY21sMFpTNUJiR3dnUjNKdmRYQXVVbVZoWkZkeWFYUmxMa0ZzYkM1VFpIQWdURzlqWVhScGIyNXpMVWx1ZEdWeWJtRnNMbEpsWVdSWGNtbDBaU0JOWVdsc0xsSmxZV1JYY21sMFpTQk5ZV2xzTGxKbFlXUlhjbWwwWlM1QmJHd2dUV0ZwYkM1U1pXRmtWM0pwZEdVdVUyaGhjbVZrSUUxaGFXd3VVMlZ1WkNCTllXbHNMbE5sYm1RdVUyaGhjbVZrSUUxaGFXeGliM2hUWlhSMGFXNW5jeTVTWldGa1YzSnBkR1VnVFdGcGJHSnZlRk5sZEhScGJtZHpMbEpsWVdSWGNtbDBaUzVCYkd3Z1RtOTBaWE11VW1WaFpDQk9iM1JsY3k1U1pXRmtWM0pwZEdVZ1RtOTBaWE10U1c1MFpYSnVZV3d1VW1WaFpGZHlhWFJsSUU1dmRHbG1hV05oZEdsdmJuTXRTVzUwWlhKdVlXd3VVbVZoWkZkeWFYUmxJRTl1YkdsdVpVMWxaWFJwYm1kekxsSmxZV1JYY21sMFpTQlBkWFJzYjI5clEyOXdhV3h2ZEMxSmJuUmxjbTVoYkM1U1pXRmtWM0pwZEdVZ1QzVjBiRzl2YTBOdmNHbHNiM1JNYVdObGJuTmxMVWx1ZEdWeWJtRnNMbEpsWVdRdVUyUndJRTkxZEd4dmIydFRaWEoyYVdObExrRmpZMlZ6YzBGelZYTmxjaTVCYkd3Z1QzVjBiRzl2YTFObGNuWnBZMlV1VG05MGFXWnBZMkYwYVc5dWMwTm9ZVzV1Wld3dVFXeHNJRTlYUVM1QlkyTmxjM05CYzFWelpYSXVRV3hzSUZCbGIzQnNaUzVTWldGa0lGQmxiM0JzWlM1U1pXRmtWM0pwZEdVZ1VHVnZjR3hsVUhKbFpHbGpkR2x2Ym5NdFNXNTBaWEp1WVd3dVVtVmhaQ0JRWlc5d2JHVlRaWFIwYVc1bmN5NVNaV0ZrTGtGc2JDQlFiR0ZqWlM1U1pXRmtMa0ZzYkNCUWJHRmpaUzVTWldGa1YzSnBkR1V1UVd4c0lGQnZiR2xqZVM1U1pXRmtMa0ZzYkM1VFpIQWdVSEpsYldsMWJTMUpiblJsY201aGJDNVNaV0ZrVjNKcGRHVWdVSEpwZG1sc1pXZGxMazl3Wlc1QmMxTjVjM1JsYlNCVGFXZHVZV3d1VW1WaFpGZHlhWFJsSUZOcFoyNWhiSE11VW1WaFpDQlRhV2R1WVd4ekxsSmxZV1JYY21sMFpTQlRhV2R1WVd4ekxVbHVkR1Z5Ym1Gc0xsSmxZV1F1VTJoaGNtVmtJRk5wWjI1aGJITXRTVzUwWlhKdVlXd3VVbVZoWkZkeWFYUmxMbE5vWVhKbFpDQlRkV0p6ZEhKaGRHVlRaV0Z5WTJndFNXNTBaWEp1WVd3dVVtVmhaRmR5YVhSbElGUmhaM011VW1WaFpGZHlhWFJsSUZSaGFXeHZjbVZrUlhod1pYSnBaVzVqWlhNdFNXNTBaWEp1WVd3dVVtVmhaRmR5YVhSbElGUmhjMnR6TGxKbFlXUlhjbWwwWlNCVVlYTnJjeTVTWldGa1YzSnBkR1V1VTJoaGNtVmtJRlJsWVcwdVVtVmhaRUpoYzJsakxrRnNiQ0JVYjJSdkxVbHVkR1Z5Ym1Gc0xsSmxZV1JYY21sMFpTQlZjMlZ5TGtsdWRtbDBaUzVCYkd3dVUyUndJRlZ6WlhJdVVtVmhaQzVCYkd3Z1ZYTmxjaTVTWldGa0xsTmtjQ0JWYzJWeUxsSmxZV1JDWVhOcFl5QlZjMlZ5TGxKbFlXUkNZWE5wWXk1QmJHd2dWWE5sY2k1U1pXRmtRbUZ6YVdNdVUyaGhjbVZrSUZWelpYSXVVbVZoWkZkeWFYUmxJRlZ6WlhJdVVtVmhaRmR5YVhSbExsTm9ZWEpsWkNCVmMyVnlMVWx1ZEdWeWJtRnNMbEpsWVdSWGNtbDBaU0lzSW5ObFkyRjFaQ0k2ZXlKaGRXUWlPaUl3TURBd01EQXdNeTB3TURBd0xUQXdNREF0WXpBd01DMHdNREF3TURBd01EQXdNREFpTENKelkzQWlPaUpNYVdObGJuTmxRWE56YVdkdWJXVnVkQzVTWldGa0xrRnNiQ0JWYzJWeUxrbHVkbWwwWlM1QmJHd2dSM0p2ZFhBdVVtVmhaRmR5YVhSbExrRnNiQ0JRYjJ4cFkza3VVbVZoWkM1QmJHd2dWWE5sY2k1U1pXRmtJbjBzSW5OcFpDSTZJakF3WWpoaE9UZzVMVGMwTm1JdE1UQTJOQzFsTVRNMkxUZGhOalExWW1FeU9USmxOQ0lzSW5OMVlpSTZJbTl1VW1SWlkyTnZSREp5TkhKRFkzSkRSRTU2TmpSaWNIVmFja3g2Y25kdVRtUktNRmd5UVVsVVNFMGlMQ0owWlc1aGJuUmZjbVZuYVc5dVgzTmpiM0JsSWpvaVJWVWlMQ0owYVdRaU9pSmhOVFUyTXpOak15MDBOek5qTFRRek56TXRZV0k0TkMxbE9XUmxNREJrTnpOak5qY2lMQ0oxYm1seGRXVmZibUZ0WlNJNklqSXpNakF3TmpJMFFHeHBkbVV1Y0hKbFkyOHVjblVpTENKMWNHNGlPaUl5TXpJd01EWXlORUJzYVhabExuQnlaV052TG5KMUlpd2lkWFJwSWpvaVZFWlRTVmhKT0cxalZUSXhWMkZPZEZCeVNWVkJRU0lzSW5abGNpSTZJakV1TUNJc0luZHBaSE1pT2xzaVlqYzVabUptTkdRdE0yVm1PUzAwTmpnNUxUZ3hORE10TnpaaU1UazBaVGcxTlRBNUlsMHNJbmh0YzE5aFkzUmZabU4wSWpvaU15QTFJaXdpZUcxelgyRjFaRjluZFdsa0lqb2lNREF3TURBd01ESXRNREF3TUMwd1ptWXhMV05sTURBdE1EQXdNREF3TURBd01EQXdJaXdpZUcxelgyTmpJanBiSWtOUU1TSmRMQ0o0YlhOZlpuUmtJam9pWDE5ckxWSkdhMjFuU3pNMmQzTTFWalZaYmtSbVMzZ3hRVTlGYW1Zd1oxRlBjWFpTZUVJd2RrOVlUVUpqTTJSc1drZFdkVmw1TVd0ak1qRjZJaXdpZUcxelgybGtjbVZzSWpvaU5DQXhJaXdpZUcxelgzTnpiU0k2SWpFaUxDSjRiWE5mYzNWaVgyWmpkQ0k2SWpNZ05pSXNJbmh0YzE5MGJuUmZabU4wSWpvaU1UUWdNeUo5LmpWZmpuRmpSQjVGZFkzRU14X1lZeThBNXlRdUJzYVIyNDVsSWJ5eHNqVEk3UmJWM25EYWFsTWZDTlJhdDlhTWk1U3g3c25ZYmQ2cmoxc2JPTF9sX2J1bnFDa3lMSmpGTTQ5SnhvdjMyaUJGOEJ6aHd2WEhoX3Ryei15ajg3d0wwVWJLNllYWFhBSWJHa0dlckh6am80NE1OY0lKMEFlLWdsTWhhZ1c2WjVlcDJjekpaN1Q2MkNLc0xEMjg5dkdZRVpiZlItZkt0RGJXWG5INDI3V3NPRlR0NmZ2NG94NmhjRzBDWXIyOTJ0aWJORnhXWmxibU5oZGwzdDZGVGZLRDRoZXdLamlaYXpkLWNlSXZuR2twS2J4aVNNYkQ1R0V3UllHbWVuVjJ3MklwLWRfMUpDakVFSlAyS2Z0YVIzUmZDeGJCZkNZVDRGYjlCQlhlOVNPYnJtdyIsImVwayI6IntcImt0eVwiOlwiUlNBXCIsXCJuXCI6XCJ4NmFJN2JHNnFCZ3dTNTZyM29xVFVjdE9OMGRkd2JhamV1M1NxWkdQWFFlbVJRVFRRd2dwWUpkV0dyTWY5N3VvNmtNYnhKdlhoc0djVlg4RkRkMzdYQVBrWWZnYklIRFNhSTBBN1l1OG9jTGFyUjl1bVU5bFNlVldEaU5OeFF5T2FFMWduYWwyQzdXellDNGhEcmlyYi1mTVpTU09NTHd2Q29GelNNbFRZUk01WjlSdXFKQktlMVZ1OFFSb2c0cF9jcVBNaDl4bUVlM2ZWVUM3c1YtUWhPTUhlazVkd0RLYkMtWjRfM1FNS3pFVk1vRHg1Z3lvTm1PSGIzbl90eC0xb09VcTVHWDBiMjJobjlGRm1zMTFJWHNEOHJzQUZNRk9DN09HbE1WQ2xxb05RMkk2anFDOUtyUXVlX0dyT0tKai1uRjM1M1lhSmpYbEhaalVIV3FXS1FcIixcImVcIjpcIkFRQUJcIixcImFsZ1wiOlwiUlMyNTZcIixcImV4cFwiOlwiMTc2NTQ1MzI0M1wiLFwiZXhwX2RpZmZcIjpcIjg2NDAwXCIsXCJraWRcIjpcImV5NFhjbjIyOEFvajJkNldUSkFiQ053NHFSa1wifS5DUmRKVWVFQm5RVVVLQXZacU9QN1NxVWdzMmVGL3RQa29XckQzRGxOc29ldEN2d28yZHBZK1cyWlZpMEZRd1pYZGZIQTFnd2NydFN3bldpZDQ1OWtZVDR3cm8walZneGNhSjdYcUF1d3U1RFprVnlVMGdjYzNWYkhwT0VNUm5qZnFYc0dMRm4yZWppd0ZTc3ZnaUJ2MW1ZWUZRMlA1RStYT2tlbDMrTDNObXllaE40UFgrcFRTWDRGMWJ5RTJVVFJHYnNZSlkyNmxHdHFqTkxrMVA5ditIK2V6T2czUmpJcnJ4cFo1ajZFYVZRaVc0bzFEOHZINDc0eHlkZ0pCc2tQUW84aUN6eUN2cDkzQjUxRHdoTzRxcTgvT1FCY21FKy9iNW9Vd2JsYWsyZThQYkthenlPVjhsVktEWVRXVFltYVFucUNRUllRSXFDVUZyTkFOMDNEeEE9PSIsIm5iZiI6MTc2NTM2MzU4MywiZXhwIjoxNzY1MzYzODgzLCJpc3MiOiJodHRwczovL3N1YnN0cmF0ZS5vZmZpY2UuY29tL3N0cy8iLCJhdWQiOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInNzZWMiOiJFN1QxSCthOWgvbXBBYkl6IiwiZXNzZWMiOiJhcnRpZmFjdC1hdXRvLXByb2R8TTM2NTIwMjUtMDgtMjNUMjI6MTQ6NDYuODg4NTcyNFp8Vk9mVkp6ZmtvMzhsK3MifQ.LM3lOhMqj8yRJ9iCaGN7yp8gG39MAraVVIvqhO2ENZS0meHT8dyfsnHzRNu0oCwkuQNSy-HAl_sLve8mHJCd_2Wjtjd97kL6CaLvI01qNy2E8yPQmr92U0VQ8GejZ-KdYsss9qSfMkDa_hseO0-HAWdr9Z6YWrlxC3CEV2nIvxKeu_-QJTKOF6YW6HM80ccrhPq1j6l-BhHR17xZzVEWBxu3oEDD9_SY-2sFyWyZWedhghb5FbmeaagDhJe0FxcKX3PKy_2QsjsLrTIzx2DDdye08xQHWQBkxBDTU3AGZPa8xRXve2HRuXOY2T_HIwdMTnLwst0l1v3ZzXk4lICGXw&X-OWA-CANARY=X-OWA-CANARY_cookie_is_null_or_empty&owa=outlook.office365.com&scriptVer=20251205004.08&clientId=AE4C7BF1BD9F49A1BE31E82E46D5A6B7&origin=4&animation=true);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
         
-        .hero h1 {
+        .goal-card:hover:before {
+            opacity: 1;
+        }
+        
+        .goal-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #10b981, #0d9488);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
             color: white;
-            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
         }
         
-        .hero p {
+        .goal-card:nth-child(2) .goal-number {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+        
+        .goal-card:nth-child(3) .goal-number {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        
+        .goal-card h3 {
             font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
+            color: #ffffff;
+            margin-bottom: 10px;
             font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+            padding-right: 40px;
         }
         
-        .btn:hover {
-            background-color: #ff006e;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
-        }
-        
-        section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-img {
-            flex: 1;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-        
-        .about-img:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-text {
-            flex: 2;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .info-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .info-list li {
-            list-style: none;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .info-list i {
-            color: var(--primary-color);
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-        
-        .hobbies {
-            margin-top: 40px;
-        }
-        
-        .hobby-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .hobby-card {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        .hobby-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dark-mode .hobby-card:hover {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        .hobby-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+        .goal-card p {
+            color: #cbd5e1;
             margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
-        .hobby-card h4 {
+        .goal-tasks {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 3px solid #10b981;
+        }
+        
+        .goal-tasks h4 {
+            color: #94a3b8;
             margin-bottom: 10px;
-            color: var(--text-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
         
-        .simple-skills {
-            margin-top: 40px;
+        .goal-tasks ul {
+            list-style: none;
         }
         
-        .skills-list {
+        .goal-tasks li {
+            padding: 6px 0;
+            color: #e2e8f0;
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .goal-tasks li:last-child {
+            border-bottom: none;
+        }
+        
+        .goal-tasks li:before {
+            content: '▸';
+            color: #10b981;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* КРУГ БАЛАНСА */
+        .balance-section {
+            margin: 50px 0;
+            position: relative;
+        }
+        
+        .balance-container {
+            background: rgba(26, 35, 53, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+        }
+        
+        .balance-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
             margin-top: 20px;
         }
         
-        .skill-tag {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            display: inline-block;
+        /* Круговая диаграмма */
+        .balance-chart {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
         }
         
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
+        .chart-circle {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
+            background: conic-gradient(
+                #10b981 0% 11.66%,
+                #3b82f6 11.66% 22.32%,
+                #8b5cf6 22.32% 38.32%,
+                #ef4444 38.32% 61.66%,
+                #f59e0b 61.66% 72.32%,
+                #06b6d4 72.32% 100%
+            );
+            position: relative;
+            animation: rotateChart 20s linear infinite;
+            box-shadow: 
+                0 0 40px rgba(16, 185, 129, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes rotateChart {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .chart-center {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-form {
-            flex: 2;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
+            color: #94a3b8;
             font-size: 1rem;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            transition: var(--transition);
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                inset 0 0 30px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(16, 185, 129, 0.2);
+            z-index: 10;
         }
         
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        .chart-center span:first-child {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        /* Легенда */
+        .balance-legend {
+            flex: 1;
+            min-width: 100%;
+            margin-top: 20px;
         }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .legend-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .legend-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .legend-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .legend-name {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .legend-value {
+            color: #fbbf24;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+        
+        .legend-desc {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        /* ОБЪЕМНОЕ ДЕРЕВО */
+        .tree-section {
+            margin: 60px 0;
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+        }
+        
+        /* Фон для дерева */
+        .tree-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(16, 185, 129, 0.05) 0%,
+                rgba(16, 185, 129, 0.02) 30%,
+                transparent 70%);
+            z-index: -1;
+        }
+        
+        /* КОНТЕЙНЕР ДЕРЕВА */
+        .tree-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        /* СТВОЛ - УПРОЩЕННЫЙ */
+        .tree-trunk {
+            position: absolute;
+            bottom: 50px;
+            width: 50px;
+            height: 200px;
+            background: linear-gradient(to right, 
+                #5D2906 0%,
+                #8B4513 20%,
+                #A0522D 50%,
+                #8B4513 80%,
+                #5D2906 100%);
+            border-radius: 25px 25px 10px 10px;
+            z-index: 5;
+            box-shadow: 
+                inset 0 0 30px rgba(93, 41, 6, 0.5),
+                0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #3a1703;
+        }
+        
+        /* ТЕКСТУРА КОРЫ */
+        .tree-trunk:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, transparent 30%, rgba(139, 69, 19, 0.3) 50%, transparent 70%),
+                linear-gradient(0deg, transparent 30%, rgba(93, 41, 6, 0.4) 50%, transparent 70%);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+        
+        /* ВЕТКИ - УПРОЩЕННЫЕ */
+        .tree-branch {
+            position: absolute;
+            background: linear-gradient(to bottom, #5D2906, #8B4513, #A0522D);
+            border-radius: 15px;
+            transform-origin: bottom center;
+            z-index: 4;
+            box-shadow: 
+                inset 0 0 15px rgba(93, 41, 6, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #3a1703;
+        }
+        
+        /* Основные ветки */
+        .branch-main-1 {
+            width: 12px;
+            height: 150px;
+            bottom: 200px;
+            left: calc(50% - 80px);
+            transform: rotate(-30deg);
+        }
+        
+        .branch-main-2 {
+            width: 12px;
+            height: 150px;
+            bottom: 200px;
+            right: calc(50% - 80px);
+            transform: rotate(30deg);
+        }
+        
+        /* КРОНА - УПРОЩЕННАЯ */
+        .tree-foliage {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 2;
+            filter: blur(1px);
+            box-shadow: 
+                inset 0 0 30px rgba(255, 255, 255, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        /* Основные скопления листвы */
+        .foliage-main-1 {
+            width: 220px;
+            height: 180px;
+            background: radial-gradient(ellipse at center, 
+                rgba(22, 163, 74, 0.9) 0%,
+                rgba(21, 128, 61, 0.8) 30%,
+                rgba(20, 83, 45, 0.6) 60%,
+                transparent 80%);
+            top: 120px;
+            left: calc(50% - 110px);
+        }
+        
+        .foliage-main-2 {
+            width: 180px;
+            height: 150px;
+            background: radial-gradient(ellipse at center, 
+                rgba(34, 197, 94, 0.9) 0%,
+                rgba(22, 163, 74, 0.8) 40%,
+                rgba(21, 128, 61, 0.6) 70%,
+                transparent 90%);
+            top: 150px;
+            left: calc(50% + 30px);
+        }
+        
+        .foliage-main-3 {
+            width: 180px;
+            height: 150px;
+            background: radial-gradient(ellipse at center, 
+                rgba(34, 197, 94, 0.9) 0%,
+                rgba(22, 163, 74, 0.8) 40%,
+                rgba(21, 128, 61, 0.6) 70%,
+                transparent 90%);
+            top: 150px;
+            right: calc(50% + 30px);
+        }
+        
+        /* МЕТКИ ЦЕЛЕЙ НА ДЕРЕВЕ */
+        .tree-goal {
+            position: absolute;
+            z-index: 10;
+            width: 120px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(26, 35, 53, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 0.9rem;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        .tree-goal:hover, .tree-goal:active {
+            transform: scale(1.1);
+            z-index: 11;
+        }
+        
+        .goal-1 {
+            top: 140px;
+            left: calc(50% - 150px);
+            border-color: #10b981;
+        }
+        
+        .goal-2 {
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-color: #3b82f6;
+            width: 130px;
+        }
+        
+        .goal-3 {
+            top: 140px;
+            right: calc(50% - 150px);
+            border-color: #8b5cf6;
+        }
+        
+        /* ОТДЕЛЬНЫЕ ЛИСТЬЯ */
+        .leaf {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #16a34a;
+            border-radius: 50% 0 50% 50%;
+            transform: rotate(45deg);
+            z-index: 1;
+            opacity: 0.8;
+            filter: blur(0.5px);
+            animation: leafFloat 8s infinite linear;
+        }
+        
+        .leaf:nth-child(2n) {
+            background: #22c55e;
+            animation-delay: -4s;
+        }
+        
+        @keyframes leafFloat {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg) scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) rotate(360deg) scale(1);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Добавим листья в разных местах */
+        .leaf-1 { top: 150px; left: calc(50% - 70px); animation-duration: 10s; }
+        .leaf-2 { top: 180px; left: calc(50% + 100px); animation-duration: 12s; }
+        .leaf-3 { top: 200px; left: calc(50% - 180px); animation-duration: 9s; }
+        .leaf-4 { top: 230px; right: calc(50% - 130px); animation-duration: 11s; }
+        .leaf-5 { top: 120px; left: calc(50% + 30px); animation-duration: 13s; }
+        .leaf-6 { top: 260px; left: calc(50% - 30px); animation-duration: 8s; }
         
         footer {
-            background-color: var(--card-bg);
-            padding: 60px 0 30px;
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            transition: var(--transition);
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.85rem;
+            padding: 0 10px;
         }
         
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-            color: var(--text-color);
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
+        /* Анимация появления */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
         
+        .goal-card, .balance-container, .tree-section {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .goal-card:nth-child(2) { animation-delay: 0.1s; }
+        .goal-card:nth-child(3) { animation-delay: 0.2s; }
+        .balance-container { animation-delay: 0.3s; }
+        .tree-section { animation-delay: 0.4s; }
+        
+        /* АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ */
         @media (max-width: 768px) {
+            body {
+                padding: 8px;
+            }
+            
             h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
             
-            h2 {
-                font-size: 2rem;
+            .subtitle {
+                font-size: 0.9rem;
             }
             
-            .hero {
-                padding: 150px 0 80px;
-            }
-            
-            section {
-                padding: 80px 0;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--card-bg);
-                flex-direction: column;
-                padding: 20px 0;
-                text-align: center;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid var(--border-color);
-                z-index: 1000;
-            }
-            
-            .dark-mode nav ul {
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .info-list {
+            .goals-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+                max-width: 100%;
+                margin: 20px auto 0;
             }
             
-            .hobby-items {
-                grid-template-columns: 1fr;
+            .goal-card {
+                margin: 0;
+                padding: 18px;
             }
-        }
-        
-        @media (max-width: 576px) {
-            .hero p {
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .balance-chart {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .chart-center {
+                width: 130px;
+                height: 130px;
+                font-size: 0.9rem;
+            }
+            
+            .chart-center span:first-child {
                 font-size: 1.1rem;
             }
+            
+            .legend-grid {
+                gap: 8px;
+            }
+            
+            .legend-item {
+                padding: 12px;
+            }
+            
+            .legend-name {
+                font-size: 0.95rem;
+            }
+            
+            .legend-value {
+                font-size: 1.3rem;
+            }
+            
+            .legend-desc {
+                font-size: 0.8rem;
+            }
+            
+            .tree-container {
+                height: 400px;
+            }
+            
+            .tree-trunk {
+                width: 40px;
+                height: 150px;
+                bottom: 60px;
+            }
+            
+            .branch-main-1, .branch-main-2 {
+                height: 100px;
+                bottom: 160px;
+                width: 10px;
+            }
+            
+            .foliage-main-1 {
+                width: 180px;
+                height: 140px;
+                top: 100px;
+                left: calc(50% - 90px);
+            }
+            
+            .foliage-main-2, .foliage-main-3 {
+                width: 140px;
+                height: 110px;
+                top: 130px;
+            }
+            
+            .tree-goal {
+                width: 100px;
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+            
+            .goal-1 {
+                top: 120px;
+                left: calc(50% - 120px);
+            }
+            
+            .goal-2 {
+                top: 90px;
+                width: 110px;
+            }
+            
+            .goal-3 {
+                top: 120px;
+                right: calc(50% - 120px);
+            }
         }
         
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .goal-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .goal-card p {
+                font-size: 0.9rem;
+            }
+            
+            .goal-tasks li {
+                font-size: 0.85rem;
+            }
+            
+            .balance-container {
+                padding: 15px;
+                margin: 0;
+            }
+            
+            .balance-chart {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .chart-center {
+                width: 110px;
+                height: 110px;
+                font-size: 0.85rem;
+            }
+            
+            .chart-center span:first-child {
+                font-size: 1rem;
+            }
+            
+            .legend-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .tree-container {
+                height: 350px;
+            }
+            
+            .tree-trunk {
+                width: 35px;
+                height: 120px;
+                bottom: 70px;
+            }
+            
+            .branch-main-1, .branch-main-2 {
+                height: 80px;
+                bottom: 140px;
+            }
+            
+            .foliage-main-1 {
+                width: 160px;
+                height: 120px;
+                top: 90px;
+                left: calc(50% - 80px);
+            }
+            
+            .foliage-main-2, .foliage-main-3 {
+                width: 120px;
+                height: 90px;
+                top: 120px;
+            }
+            
+            .tree-goal {
+                width: 85px;
+                padding: 8px;
+                font-size: 0.75rem;
+            }
+            
+            .goal-1 {
+                top: 110px;
+                left: calc(50% - 100px);
+            }
+            
+            .goal-2 {
+                top: 80px;
+                width: 95px;
+            }
+            
+            .goal-3 {
+                top: 110px;
+                right: calc(50% - 100px);
+            }
+            
+            /* Скрываем некоторые элементы на очень маленьких экранах */
+            .leaf {
+                display: none;
+            }
+            
+            .branch-main-1, .branch-main-2 {
+                display: none;
+            }
         }
         
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+            
+            .subtitle {
+                font-size: 0.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .goal-card {
+                padding: 15px;
+            }
+            
+            .goal-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .goal-number {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+            
+            .tree-container {
+                height: 300px;
+            }
+            
+            .tree-trunk {
+                width: 30px;
+                height: 100px;
+            }
+            
+            .foliage-main-1 {
+                width: 140px;
+                height: 100px;
+                top: 80px;
+                left: calc(50% - 70px);
+            }
+            
+            .foliage-main-2, .foliage-main-3 {
+                width: 100px;
+                height: 80px;
+                top: 100px;
+            }
+            
+            .tree-goal {
+                width: 75px;
+                padding: 6px;
+                font-size: 0.7rem;
+            }
+            
+            .goal-1 {
+                top: 100px;
+                left: calc(50% - 90px);
+            }
+            
+            .goal-2 {
+                top: 70px;
+                width: 85px;
+            }
+            
+            .goal-3 {
+                top: 100px;
+                right: calc(50% - 90px);
+            }
+        }
+        
+        /* ЛАНДШАФТНЫЙ РЕЖИМ */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .tree-section {
+                margin: 30px 0;
+                min-height: 350px;
+            }
+            
+            .tree-container {
+                height: 300px;
+            }
+            
+            .tree-trunk {
+                height: 120px;
+                bottom: 40px;
+            }
+            
+            .foliage-main-1 {
+                top: 60px;
+                height: 100px;
+            }
+            
+            .foliage-main-2, .foliage-main-3 {
+                top: 80px;
+                height: 80px;
+            }
+            
+            .tree-goal {
+                width: 90px;
+                font-size: 0.75rem;
+            }
+            
+            .goal-1 {
+                top: 80px;
+            }
+            
+            .goal-2 {
+                top: 50px;
+            }
+            
+            .goal-3 {
+                top: 80px;
+            }
+            
+            .goals-section {
+                margin-bottom: 30px;
+            }
+            
+            .balance-section {
+                margin: 30px 0;
+            }
+        }
+        
+        /* Улучшения для touch устройств */
+        @media (hover: none) and (pointer: coarse) {
+            .goal-card:hover {
+                transform: none;
+            }
+            
+            .tree-goal:hover {
+                transform: none;
+            }
+            
+            .legend-item:hover {
+                transform: none;
+            }
+            
+            /* Увеличиваем область нажатия для мобильных */
+            .tree-goal {
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .goal-card {
+                cursor: default;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-code"></i>
-                LVG <span>Portfolio</span>
-            </a>
+    <div class="container">
+        <header>
+            <h1>Большие цели Ивана Рейнаса</h1>
+            <p class="subtitle"></p>
+        </header>
+        
+        <!-- ЦЕЛИ -->
+        <section class="goals-section">
+            <h2 class="section-title"></h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <h3>Профессиональный рост</h3>
+                    <p>Стать востребованным IT-специалистом с экспертизой в современных технологиях и архитектуре. (Помле Армии)</p>
+                    <div class="goal-tasks">
+                        <h4>Ключевые задачи</h4>
+                        <ul>
+                            <li>Освоить новые языки программирования</li>
+                            <li>Завершить образование с отличием</li>
+                            <li>Получить работу в топовой компании</li>
+                            <li>Создать портфолио проектов</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <h3>Личная жизнь</h3>
+                    <p>Построить гармоничные отношения и семью, основанные на взаимном уважении и поддержке. (В течени 5 лет)</p>
+                    <div class="goal-tasks">
+                        <h4>Ключевые задачи</h4>
+                        <ul>
+                            <li>Найти партнера с общими ценностями</li>
+                            <li>Создать стабильные условия</li>
+                            <li>Развивать эмоциональный интеллект</li>
+                            <li>Строить здоровые коммуникации</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <h3>Саморазвитие</h3>
+                    <p>Достичь баланса между физическим здоровьем, ментальным состоянием и социальными навыками. (После Армии)</p>
+                    <div class="goal-tasks">
+                        <h4>Ключевые задачи</h4>
+                        <ul>
+                            <li>Регулярные тренировки и спорт</li>
+                            <li>Развитие коммуникативных навыков</li>
+                            <li>Освоение тайм-менеджмента</li>
+                            <li>Работа над ментальным здоровьем</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- БАЛАНС ЖИЗНИ -->
+        <section class="balance-section">
+            <h2 class="section-title">Баланс жизни</h2>
+            <div class="balance-container">
+                <div class="balance-content">
+                    <div class="balance-chart">
+                        <div class="chart-circle"></div>
+                        <div class="chart-center">
+                            <span>Баланс</span>
+                            <span>7.2 / 10</span>
+                        </div>
+                    </div>
+                    
+                    <div class="balance-legend">
+                        <div class="legend-grid">
+                            <div class="legend-item">
+                                <div class="legend-header">
+                                    <div class="legend-color" style="background: #10b981;"></div>
+                                    <div class="legend-name">Здоровье</div>
+                                </div>
+                                <div class="legend-value">7/10</div>
+                                <div class="legend-desc">Физическое и ментальное</div>
+                            </div>
+                            
+                            <div class="legend-item">
+                                <div class="legend-header">
+                                    <div class="legend-color" style="background: #3b82f6;"></div>
+                                    <div class="legend-name">Финансы</div>
+                                </div>
+                                <div class="legend-value">6/10</div>
+                                <div class="legend-desc">Стабильность и рост</div>
+                            </div>
+                            
+                            <div class="legend-item">
+                                <div class="legend-header">
+                                    <div class="legend-color" style="background: #8b5cf6;"></div>
+                                    <div class="legend-name">Отдых</div>
+                                </div>
+                                <div class="legend-value">8/10</div>
+                                <div class="legend-desc">Качество восстановления</div>
+                            </div>
+                            
+                            <div class="legend-item">
+                                <div class="legend-header">
+                                    <div class="legend-color" style="background: #ef4444;"></div>
+                                    <div class="legend-name">Семья</div>
+                                </div>
+                                <div class="legend-value">10/10</div>
+                                <div class="legend-desc">Отношения и поддержка</div>
+                            </div>
+                            
+                            <div class="legend-item">
+                                <div class="legend-header">
+                                    <div class="legend-color" style="background: #f59e0b;"></div>
+                                    <div class="legend-name">Любовь</div>
+                                </div>
+                                <div class="legend-value">6/10</div>
+                                <div class="legend-desc">Романтические отношения</div>
+                            </div>
+                            
+                            <div class="legend-item">
+                                <div class="legend-header">
+                                    <div class="legend-color" style="background: #06b6d4;"></div>
+                                    <div class="legend-name">Хобби</div>
+                                </div>
+                                <div class="legend-value">4/10</div>
+                                <div class="legend-desc">Творчество и увлечения</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ОБЪЕМНОЕ ДЕРЕВО БЕЗ КОРНЕЙ -->
+        <section class="tree-section">
+            <div class="tree-background"></div>
             
-            <div class="nav-controls">
-                <nav>
-                    <ul id="navMenu">
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#about">Обо мне</a></li>
-                        <li><a href="#hobbies">Увлечения</a></li>
-                        <li><a href="#contact">Контакты</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="theme-toggle" id="themeToggle">
-                    <div class="theme-toggle-slider">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                </div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 class="fade-in">Рейнас Иван Александрович</h1>
-            <p class="fade-in">Студент 3 курса Урк. Просто парень, который любит игры и немного увлекается программированием.</p>
-            <a href="#about" class="btn fade-in">Узнать больше</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Обо мне</h2>
-            </div>
+            <h2 class="section-title">Древо роста</h2>
             
-            <div class="about-content fade-in">
-                <div class="about-img">
-                    <img src="https://sun9-45.userapi.com/s/v1/ig2/BY-V2-f57E11En_Efs0X46B24JvYjQM6SSFepya-sffEaNSCsvf-XlNhJAu6JajJi8_SSbBa9B9nH1FtSwNE4Y9H.jpg?quality=95&as=32x35,48x53,72x79,108x119,160x176,240x264,360x396,480x528,540x594,640x703,720x791,736x809&from=bu&cs=736x0" alt="Рейнас Иван Александрович">
-                </div>
+            <div class="tree-container">
+                <!-- Отдельные листья -->
+                <div class="leaf leaf-1"></div>
+                <div class="leaf leaf-2"></div>
+                <div class="leaf leaf-3"></div>
+                <div class="leaf leaf-4"></div>
+                <div class="leaf leaf-5"></div>
+                <div class="leaf leaf-6"></div>
                 
-                <div class="about-text">
-                    <p>Привет! Меня зовут Иван, и я студент 3 курса Урк. Учусь на программиста.</p>
-                    <p>В колледже нам рассказывают про всякие языки программирования и базы данных. Это интересно, но больше всего я люблю играть.</p>
-                    <p>Программирование - это скорее хобби и то, чем приходится заниматься по учебе. Но иногда получается сделать что-то интересное.</p>
-                    
-                    <ul class="info-list">
-                        <li><i class="fas fa-user"></i> <strong>Возраст:</strong>  19 лет</li>
-                        <li><i class="fas fa-map-marker-alt"></i> <strong>Город:</strong>  Челябинск</li>
-                        <li><i class="fas fa-graduation-cap"></i> <strong>Образование:</strong>  Колледж УРК, 3 курс</li>
-                        <li><i class="fas fa-code"></i> <strong>Специальность:</strong>  Информационные системы и программирование</li>
-                        <li><i class="fas fa-gamepad"></i> <strong>Любимые жанры:</strong>  Шутеры, JRPG, ARPG</li>
-                        <li><i class="fas fa-laptop-code"></i> <strong>Программирование:</strong>  Немного увлекаюсь</li>
-                    </ul>
-                    
-                    <div class="simple-skills fade-in">
-                        <h3>Что я умею:</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">HTML/CSS (базово)</span>
-                            <span class="skill-tag">JavaScript (немного)</span>
-                            <span class="skill-tag">Python (чуть-чуть)</span>
-                            <span class="skill-tag">Создание простых сайтов</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hobbies Section -->
-    <section id="hobbies" style="background-color: var(--card-bg);">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Мои увлечения</h2>
-            </div>
-            
-            <div class="hobbies">
-                <p class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-                    Вот чем я занимаюсь в свободное время.
-                </p>
+                <!-- Метки целей -->
+                <div class="tree-goal goal-1">Профессиональный рост</div>
+                <div class="tree-goal goal-2">Личная жизнь</div>
+                <div class="tree-goal goal-3">Саморазвитие</div>
                 
-                <div class="hobby-items">
-                    <div class="hobby-card fade-in">
-                        <i class="fas fa-gamepad"></i>
-                        <h4>Компьютерные игры</h4>
-                        <p>Провожу большую часть свободного времени в играх. Люблю разные жанры, но особенно шутеры и RPG.</p>
-                    </div>
-                    
-                    <div class="hobby-card fade-in">
-                        <i class="fas fa-laptop-code"></i>
-                        <h4>Программирование</h4>
-                        <p>Иногда пишу код, в основном когда нужно по учебе.</p>
-                    </div>
-                    
-                    <div class="hobby-card fade-in">
-                        <i class="fas fa-film"></i>
-                        <h4>Фильмы и сериалы</h4>
-                        <p>Смотрю что-нибудь интересное, когда устаю от игр.</p>
-                    </div>
-                    
-                    <div class="hobby-card fade-in">
-                        <i class="fas fa-headphones"></i>
-                        <h4>Музыка</h4>
-                        <p>Слушаю музыку постоянно - во время игр, учебы, прогулок. В основном рок и ЛЮТЫЙ ДАПСТЕБ.</p>
-                    </div>
-                    
-                    <div class="hobby-card fade-in">
-                        <i class="fas fa-utensils"></i>
-                        <h4>Еда</h4>
-                        <p>Люблю вкусно поесть.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Контакты</h2>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info fade-in">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Откуда я</h3>
-                            <p>Челябинск, Россия</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div>
-                            <h3>Учеба</h3>
-                            <p>Колледж УРК, 3 курс</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-gamepad"></i>
-                        <div>
-                            <h3>Любимое занятие</h3>
-                            <p>Игры</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-code"></i>
-                        <div>
-                            <h3>Программирование</h3>
-                            <p>Немного увлекаюсь, когда есть настроение</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Крона (листва) -->
+                <div class="tree-foliage foliage-main-1"></div>
+                <div class="tree-foliage foliage-main-2"></div>
+                <div class="tree-foliage foliage-main-3"></div>
                 
-                <div class="contact-form fade-in">
-                    <h3 style="margin-bottom: 20px;">Напиши мне</h3>
-                    <p style="margin-bottom: 25px;">Если хочешь поболтать об играх или обсудить блокировку роблокса - напиши сообщение. О программировании тоже могу немного поговорить.</p>
-                    
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Как тебя зовут?</label>
-                            <input type="text" id="name" name="from_name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Твой email</label>
-                            <input type="email" id="email" name="from_email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">О чем хочешь поговорить?</label>
-                            <select id="subject" name="subject" class="form-control" required>
-                                <option value="">Выбери тему</option>
-                                <option value="Игры">Игры</option>
-                                <option value="Учеба">Учеба</option>
-                                <option value="Программирование">Программирование</option>
-                                <option value="Другое">Другое</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Твое сообщение</label>
-                            <textarea id="message" name="message" class="form-control" required placeholder="Напиши что-нибудь..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Отправить сообщение</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2 style="color: var(--text-color);">Рейнас Иван</h2>
-                    <p style="color: var(--text-color); opacity: 0.8; margin-top: 10px;">Студент, gaymer, программист</p>
-                </div>
+                <!-- Ветки -->
+                <div class="tree-branch branch-main-1"></div>
+                <div class="tree-branch branch-main-2"></div>
                 
-                <div class="social-links">
-                    <a href="https://vk.com/lil_vanogavno" title="ВКонтакте" target="_blank">
-                        <i class="fab fa-vk"></i>
-                    </a>
-                    
-                    <a href="https://t.me/vanogavno" title="Telegram" target="_blank">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                    
-                    <a href="https://steamcommunity.com/id/lvgwashere" class="social-btn steam" target="_blank">
-                        <i class="fab fa-steam"></i>
-                    </a>
-                </div>
+                <!-- Ствол -->
+                <div class="tree-trunk"></div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 Рейнас Иван Александрович. Все права НЕ защищены.</p>
-                <p>Студент 3 курса Колледжа УРК</p>
-            </div>
-        </div>
-    </footer>
+        </section>
+        
+        <footer>
+            <p></p>
+        </footer>
+    </div>
 
     <script>
-        // Инициализация EmailJS с ВАШИМИ ключами
-        (function() {
-            emailjs.init({
-                publicKey: "TZ8kER3J5N0m1uvBr",
+        // Интерактивность для целей на дереве
+        document.querySelectorAll('.tree-goal').forEach(goal => {
+            goal.addEventListener('click', function() {
+                const text = this.textContent;
+                alert(`Цель: ${text}\n\nЭта цель является ключевой частью вашего развития. Сосредоточьтесь на ней для достижения максимального прогресса.`);
             });
-            console.log("EmailJS initialized with your keys");
-        })();
+            
+            // Для touch устройств добавляем активное состояние
+            goal.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            goal.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+        });
         
-        // Переключение темы
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
-        // Проверяем сохраненную тему
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
+        // Отключаем параллакс на мобильных устройствах
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', function(e) {
+                const treeSection = document.querySelector('.tree-section');
+                const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                
+                treeSection.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+            });
         }
         
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
+        // Создаем дополнительные листья только на больших экранах
+        function createAdditionalLeaves() {
+            const treeContainer = document.querySelector('.tree-container');
+            const leafCount = window.innerWidth > 768 ? 15 : 5;
             
-            // Сохраняем выбор пользователя
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            
-            // Change icon
-            const icon = mobileMenuBtn.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+            for (let i = 0; i < leafCount; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf';
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                // Случайная позиция
+                const left = 20 + Math.random() * 60;
+                const top = 100 + Math.random() * 200;
+                const size = window.innerWidth > 768 ? (15 + Math.random() * 10) : (10 + Math.random() * 8);
+                const duration = 8 + Math.random() * 8;
+                const delay = Math.random() * 5;
                 
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+                leaf.style.left = `${left}%`;
+                leaf.style.top = `${top}px`;
+                leaf.style.width = `${size}px`;
+                leaf.style.height = `${size}px`;
+                leaf.style.animationDuration = `${duration}s`;
+                leaf.style.animationDelay = `${delay}s`;
+                leaf.style.opacity = 0.6 + Math.random() * 0.4;
+                
+                treeContainer.appendChild(leaf);
+            }
+        }
+        
+        // Запускаем при загрузке
+        document.addEventListener('DOMContentLoaded', createAdditionalLeaves);
+        
+        // Обработчик изменения ориентации
+        window.addEventListener('orientationchange', function() {
+            // Перезапускаем создание листьев при смене ориентации
+            setTimeout(createAdditionalLeaves, 300);
         });
         
-        // Form submission with EmailJS - ВАШИ ID
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Показываем индикатор загрузки
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Отправка...';
-            submitBtn.disabled = true;
-            
-            // Собираем данные
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                date: new Date().toLocaleString('ru-RU')
-            };
-            
-            console.log("Отправляю данные на EmailJS:", templateParams);
-            console.log("Service ID: service_ac70ldj");
-            console.log("Template ID: template_e2d0bdp");
-            
-            // Отправляем с ВАШИМИ ID
-            emailjs.send('service_ac70ldj', 'template_e2d0bdp', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert(`✅ Сообщение отправлено! Спасибо, ${templateParams.from_name}! Я отвечу как можно скорее.`);
-                    contactForm.reset();
-                }, function(error) {
-                    console.error('FAILED...', error);
-                    alert('❌ Ошибка отправки: ' + error.text + '\nПопробуйте еще раз или свяжитесь через соцсети.');
-                })
-                .finally(function() {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
-        });
-        
-        // Анимация появления элементов при скролле
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const appearOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        fadeElements.forEach(element => {
-            appearOnScroll.observe(element);
-        });
-        
-        // Highlight active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav ul li a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        // Предотвращаем масштабирование при двойном тапе
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
